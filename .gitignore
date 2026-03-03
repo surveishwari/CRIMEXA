@@ -1,0 +1,4 @@
+venv/
+backend/models/
+__pycache__/
+*.pyc
