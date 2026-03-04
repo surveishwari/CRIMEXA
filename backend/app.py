@@ -15,13 +15,15 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict():
     data = request.json
-
     try:
         features = [
             data["location_type"],
             data["time_of_incident"],
             data["entry_method"],
-            data["weapon_present"]
+            data["weapon_present"],
+            data.get("num_people_present", 0),
+            data.get("sound_level", 0),
+            data.get("motion_detected", 0)
         ]
 
         prediction = model.predict([features])
