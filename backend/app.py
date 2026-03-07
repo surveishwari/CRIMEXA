@@ -1,43 +1,77 @@
 from flask import Flask, request, jsonify
 import joblib
-from flask_cors import CORS
+import numpy as np
+import pandas as pd
+import os
 
 app = Flask(__name__)
-CORS(app)
 
 # Load trained model
-model = joblib.load("models/crime_model.pkl")
+model_path = os.path.join("..", "models", "crime_model.pkl")
+model = joblib.load(model_path)
+
+print("CRIMEXA Model Loaded Successfully")
+
 
 @app.route("/")
 def home():
-    return "CRIMEXA Backend Running"
+    return "CRIMEXA API Running"
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
-    data = request.json
     try:
-        features = [
-            data["location_type"],
-            data["time_of_incident"],
-            data["entry_method"],
-            data["weapon_present"],
-            data.get("num_people_present", 0),
-            data.get("sound_level", 0),
-            data.get("motion_detected", 0)
-        ]
 
-        prediction = model.predict([features])
+        data = request.get_json()
+
+        # Read input dynamically
+        location = int(data.get("location"))
+        hour = int(data.get("hour"))
+        month = int(data.get("month"))
+        arrest = int(data.get("arrest"))
+        domestic = int(data.get("domestic"))
+        state = data.get("state")
+
+        # Create dataframe (same structure as training)
+        features = pd.DataFrame({
+            "location": [location],
+            "hour": [hour],
+            "month": [month],
+            "arrest": [arrest],
+            "domestic": [domestic]
+        })
+
+        # Predict
+        prediction = model.predict(features)[0]
+
+        # Confidence score
+        if hasattr(model, "predict_proba"):
+            probs = model.predict_proba(features)[0]
+            confidence = float(np.max(probs) * 100)
+        else:
+            confidence = None
 
         return jsonify({
             "status": "success",
-            "predicted_crime": prediction[0]
+            "prediction": str(prediction),
+            "confidence": confidence,
+            "input": {
+                "location": location,
+                "hour": hour,
+                "month": month,
+                "arrest": arrest,
+                "domestic": domestic,
+                "state": state
+            }
         })
 
     except Exception as e:
+
         return jsonify({
             "status": "error",
             "message": str(e)
         })
 
+
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(debug=True)
