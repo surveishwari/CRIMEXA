@@ -1,158 +1,56 @@
 import 'package:flutter/material.dart';
-import '../ai/reconstruction_engine.dart';
+import 'package:provider/provider.dart';
+import '../providers/evidence_provider.dart';
+import '../models/evidence.dart';
 
-class EvidenceMappingScreen extends StatefulWidget {
+class EvidenceMappingScreen extends StatelessWidget {
   const EvidenceMappingScreen({super.key});
 
   @override
-  State<EvidenceMappingScreen> createState() =>
-      _EvidenceMappingScreenState();
-}
-
-class _EvidenceMappingScreenState extends State<EvidenceMappingScreen> {
-
-  List<String> evidence = [];
-  String result = "";
-
-  final ReconstructionEngine engine = ReconstructionEngine();
-
-  void addEvidence(String type) {
-
-    setState(() {
-
-      evidence.add(type);
-
-      result = engine.reconstruct(evidence);
-
-    });
-
-  }
-
-  @override
   Widget build(BuildContext context) {
+    final evidenceProvider = Provider.of<EvidenceProvider>(context);
 
     return Scaffold(
-
-      appBar: AppBar(
-        title: const Text("Evidence Mapping"),
-      ),
-
+      appBar: AppBar(title: const Text('Evidence Mapping')),
       body: Padding(
-
         padding: const EdgeInsets.all(16),
-
         child: Column(
-
-          crossAxisAlignment: CrossAxisAlignment.start,
-
           children: [
-
-            const Text(
-              "Add Evidence",
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
+            ElevatedButton(
+              onPressed: () {
+                evidenceProvider.addEvidence(Evidence(
+                  id: DateTime.now().toString(),
+                  crimeId: 'crime1',
+                  description: 'Sample Evidence',
+                ));
+              },
+              child: const Text('Add Evidence'),
             ),
-
-            const SizedBox(height: 10),
-
-            Wrap(
-
-              spacing: 10,
-
-              children: [
-
-                ElevatedButton(
-                  onPressed: () => addEvidence("knife"),
-                  child: const Text("Add Knife"),
-                ),
-
-                ElevatedButton(
-                  onPressed: () => addEvidence("blood"),
-                  child: const Text("Add Blood"),
-                ),
-
-                ElevatedButton(
-                  onPressed: () => addEvidence("body"),
-                  child: const Text("Add Body"),
-                ),
-
-                ElevatedButton(
-                  onPressed: () => addEvidence("glass"),
-                  child: const Text("Add Glass"),
-                ),
-
-              ],
-
-            ),
-
-            const SizedBox(height: 20),
-
-            const Text(
-              "Evidence Found:",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
+            const SizedBox(height: 16),
             Expanded(
-
               child: ListView.builder(
-
-                itemCount: evidence.length,
-
+                itemCount: evidenceProvider.evidenceList.length,
                 itemBuilder: (context, index) {
-
+                  final evidence = evidenceProvider.evidenceList[index];
                   return Card(
-
                     child: ListTile(
-
-                      leading: const Icon(Icons.search),
-
-                      title: Text(evidence[index]),
-
+                      title: Text(evidence.description),
+                      subtitle: Text('Crime ID: ${evidence.crimeId}'),
+                      trailing: IconButton(
+                        icon: const Icon(Icons.delete, color: Colors.red),
+                        onPressed: () {
+                          evidenceProvider.evidenceList.removeAt(index);
+                          evidenceProvider.notifyListeners();
+                        },
+                      ),
                     ),
-
                   );
-
                 },
-
               ),
-
-            ),
-
-            const SizedBox(height: 10),
-
-            const Text(
-              "Predicted Event:",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
-            const SizedBox(height: 5),
-
-            Text(
-              result,
-              style: const TextStyle(
-                fontSize: 18,
-                color: Colors.red,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-
+            )
           ],
-
         ),
-
       ),
-
     );
-
   }
 }

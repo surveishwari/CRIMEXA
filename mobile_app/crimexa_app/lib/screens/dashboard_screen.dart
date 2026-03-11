@@ -1,127 +1,53 @@
 import 'package:flutter/material.dart';
-import 'package:fl_chart/fl_chart.dart';
-import '../widgets/sidebar.dart';
+import 'crime_reconstruction.dart';
+import 'case_management.dart';
+import 'prediction.dart';
+import 'emergency_contact.dart';
+import 'qr_scanner.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
-  Widget statCard(String title, String value, IconData icon) {
-    return AnimatedContainer(
-      duration: const Duration(milliseconds: 500),
-      padding: const EdgeInsets.all(16),
-      decoration: BoxDecoration(
-        color: Colors.blueGrey.shade900,
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: Row(
-        children: [
-          Icon(icon, size: 40, color: Colors.blue),
-          const SizedBox(width: 10),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(value,
-                  style: const TextStyle(
-                      fontSize: 22, fontWeight: FontWeight.bold)),
-              Text(title)
-            ],
-          )
-        ],
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
+    final items = [
+      {'title': 'Crime Recon', 'icon': Icons.search, 'screen': const CrimeReconstruction()},
+      {'title': 'Case Management', 'icon': Icons.folder, 'screen': const CaseManagement()},
+      {'title': 'Prediction', 'icon': Icons.analytics, 'screen': const PredictionScreen()},
+      {'title': 'Emergency', 'icon': Icons.phone, 'screen': const EmergencyContact()},
+      {'title': 'QR Scanner', 'icon': Icons.qr_code, 'screen': const QRScanner()},
+    ];
+
     return Scaffold(
-      drawer: const Sidebar(),
       appBar: AppBar(title: const Text("CRIMEXA Dashboard")),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          children: [
-
-            /// Stats Row
-            Row(
-              children: [
-                Expanded(child: statCard("Total Cases", "120", Icons.folder)),
-                const SizedBox(width: 10),
-                Expanded(child: statCard("Open Cases", "34", Icons.warning)),
-              ],
-            ),
-
-            const SizedBox(height: 10),
-
-            Row(
-              children: [
-                Expanded(child: statCard("Evidence", "87", Icons.search)),
-                const SizedBox(width: 10),
-                Expanded(child: statCard("Reports", "52", Icons.description)),
-              ],
-            ),
-
-            const SizedBox(height: 30),
-
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Crime Statistics",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              ),
-            ),
-
-            const SizedBox(height: 20),
-
-            SizedBox(
-              height: 250,
-              child: BarChart(
-                BarChartData(
-                  barGroups: [
-                    BarChartGroupData(x: 0, barRods: [BarChartRodData(toY: 10)]),
-                    BarChartGroupData(x: 1, barRods: [BarChartRodData(toY: 7)]),
-                    BarChartGroupData(x: 2, barRods: [BarChartRodData(toY: 5)]),
-                    BarChartGroupData(x: 3, barRods: [BarChartRodData(toY: 12)]),
+      body: Padding(
+        padding: const EdgeInsets.all(10),
+        child: GridView.builder(
+          itemCount: items.length,
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10),
+          itemBuilder: (context, index) {
+            return GestureDetector(
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => items[index]['screen'] as Widget));
+              },
+              child: Card(
+                elevation: 8,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                shadowColor: Colors.deepPurpleAccent,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(items[index]['icon'] as IconData, size: 50, color: Colors.deepPurple),
+                    const SizedBox(height: 10),
+                    Text(items[index]['title'] as String,
+                        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
                   ],
                 ),
               ),
-            ),
-
-            const SizedBox(height: 30),
-
-            const Align(
-              alignment: Alignment.centerLeft,
-              child: Text(
-                "Recent Cases",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
-            Card(
-              child: ListTile(
-                leading: const Icon(Icons.warning),
-                title: const Text("Motor Vehicle Theft"),
-                subtitle: const Text("Street - 21:00"),
-              ),
-            ),
-
-            Card(
-              child: ListTile(
-                leading: const Icon(Icons.warning),
-                title: const Text("Criminal Damage"),
-                subtitle: const Text("Restaurant - 17:30"),
-              ),
-            ),
-
-            Card(
-              child: ListTile(
-                leading: const Icon(Icons.warning),
-                title: const Text("Weapons Violation"),
-                subtitle: const Text("Parking Lot - 22:00"),
-              ),
-            ),
-          ],
+            );
+          },
         ),
       ),
     );

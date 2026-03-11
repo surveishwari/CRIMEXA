@@ -1,27 +1,21 @@
-import '../models/evidence_model.dart';
-import '../models/timeline_event.dart';
+import 'dart:convert';
+import 'dart:io';
+import 'package:http/http.dart' as http;
 
-class TimelineService {
+class ApiService {
+  static const String baseUrl = "http://127.0.0.1:5000";
 
-  static List<TimelineEvent> generateTimeline(List<Evidence> evidenceList){
+  static Future<Map<String, dynamic>> analyzeScene(File image) async {
+    var request = http.MultipartRequest('POST', Uri.parse('$baseUrl/analyze_scene'));
+    request.files.add(await http.MultipartFile.fromPath('image', image.path));
 
-    List<TimelineEvent> events = [];
+    var streamed = await request.send();
+    var response = await http.Response.fromStream(streamed);
 
-    for(var evidence in evidenceList){
-
-      events.add(
-        TimelineEvent(
-          title: "Evidence Collected",
-          description: evidence.type,
-          time: DateTime.parse(evidence.time),
-        ),
-      );
-
+    if (response.statusCode == 200) {
+      return jsonDecode(response.body);
+    } else {
+      throw Exception("Failed to analyze scene: ${response.body}");
     }
-
-    events.sort((a,b) => a.time.compareTo(b.time));
-
-    return events;
   }
-
 }

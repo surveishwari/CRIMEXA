@@ -1,171 +1,98 @@
 import 'package:flutter/material.dart';
-
-import '../screens/dashboard_screen.dart';
-import '../screens/crime_scanner_screen.dart';
-import '../screens/predict_crime_screen.dart';
-import '../screens/crime_scene_viewer.dart';
-import '../screens/crime_map_screen.dart';
+import '../screens/upload_evidence_screen.dart';
+import '../screens/scene_3d_screen.dart';
+import '../screens/case_management_screen.dart';
 
 class Sidebar extends StatelessWidget {
-const Sidebar({super.key});
+  const Sidebar({super.key});
 
-@override
-Widget build(BuildContext context) {
-return Drawer(
-child: Container(
-color: Colors.blueGrey.shade900,
-child: ListView(
-padding: EdgeInsets.zero,
-children: [
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: Container(
+        color: Colors.black87,
 
-```
-        /// HEADER
-        DrawerHeader(
-          decoration: const BoxDecoration(
-            color: Colors.black87,
-          ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
+        child: ListView(
+          children: [
 
-              Icon(
-                Icons.security,
-                color: Colors.white,
-                size: 40,
+            /// HEADER
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.redAccent,
               ),
-
-              SizedBox(height: 10),
-
-              Text(
-                "CRIMEXA",
+              child: Text(
+                "CRIMEXA Menu",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 24,
                 ),
               ),
+            ),
 
-              SizedBox(height: 5),
-
-              Text(
-                "AI Crime Investigation",
-                style: TextStyle(
-                  color: Colors.white70,
-                ),
+            /// UPLOAD EVIDENCE
+            ListTile(
+              leading: const Icon(
+                Icons.upload_file,
+                color: Colors.white,
               ),
-            ],
-          ),
-        ),
-
-        /// DASHBOARD
-        ListTile(
-          leading: const Icon(Icons.dashboard, color: Colors.white),
-          title: const Text(
-            "Dashboard",
-            style: TextStyle(color: Colors.white),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const DashboardScreen(),
+              title: const Text(
+                "Upload Evidence",
+                style: TextStyle(color: Colors.white),
               ),
-            );
-          },
-        ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const UploadEvidenceScreen(),
+                  ),
+                );
+              },
+            ),
 
-        /// SCAN CRIME SCENE
-        ListTile(
-          leading: const Icon(Icons.camera_alt, color: Colors.white),
-          title: const Text(
-            "Scan Crime Scene",
-            style: TextStyle(color: Colors.white),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const CrimeScannerScreen(),
+            /// 3D SCENE VIEWER
+            ListTile(
+              leading: const Icon(
+                Icons.map,
+                color: Colors.white,
               ),
-            );
-          },
-        ),
-
-        /// CRIME PREDICTION
-        ListTile(
-          leading: const Icon(Icons.analytics, color: Colors.white),
-          title: const Text(
-            "Crime Prediction",
-            style: TextStyle(color: Colors.white),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const PredictCrimeScreen(),
+              title: const Text(
+                "3D Scene Viewer",
+                style: TextStyle(color: Colors.white),
               ),
-            );
-          },
-        ),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const Scene3DScreen(
+                      modelPath: "assets/3d_scenes/sample.obj",
+                    ),
+                  ),
+                );
+              },
+            ),
 
-        /// 3D CRIME SCENE
-        ListTile(
-          leading: const Icon(Icons.view_in_ar, color: Colors.white),
-          title: const Text(
-            "3D Crime Scene",
-            style: TextStyle(color: Colors.white),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const CrimeSceneViewer(
-                  prediction: "",
-                  objects: [],
-                ),
+            /// CASE MANAGEMENT
+            ListTile(
+              leading: const Icon(
+                Icons.folder,
+                color: Colors.white,
               ),
-            );
-          },
-        ),
-
-        /// CRIME HEATMAP
-        ListTile(
-          leading: const Icon(Icons.map, color: Colors.white),
-          title: const Text(
-            "Crime Heatmap",
-            style: TextStyle(color: Colors.white),
-          ),
-          onTap: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const CrimeMapScreen(),
+              title: const Text(
+                "Case Management",
+                style: TextStyle(color: Colors.white),
               ),
-            );
-          },
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const CaseManagementScreen(),
+                  ),
+                );
+              },
+            ),
+          ],
         ),
-
-        /// REPORTS
-        ListTile(
-          leading: const Icon(Icons.description, color: Colors.white),
-          title: const Text(
-            "Reports",
-            style: TextStyle(color: Colors.white),
-          ),
-          onTap: () {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text("Report module coming soon"),
-              ),
-            );
-          },
-        ),
-
-      ],
-    ),
-  ),
-);
-```
-
-}
+      ),
+    );
+  }
 }

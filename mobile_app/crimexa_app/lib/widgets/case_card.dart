@@ -1,83 +1,41 @@
 import 'package:flutter/material.dart';
-import '../models/case_model.dart';
 
 class CaseCard extends StatelessWidget {
-  final CaseModel caseItem;
-  final VoidCallback onTap;
+  final String title;
+  final String description;
+  final VoidCallback onView;
+  final VoidCallback onEdit;
+  final VoidCallback onDelete;
 
-  CaseCard({required this.caseItem, required this.onTap});
-
-  Color getPriorityColor(String priority) {
-    switch (priority) {
-      case 'High':
-        return Colors.redAccent;
-      case 'Medium':
-        return Colors.orangeAccent;
-      default:
-        return Colors.green;
-    }
-  }
-
-  IconData getStatusIcon(String status) {
-    switch (status) {
-      case 'Open':
-        return Icons.lock_open;
-      case 'Closed':
-        return Icons.check_circle;
-      default:
-        return Icons.search;
-    }
-  }
+  const CaseCard({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.onView,
+    required this.onEdit,
+    required this.onDelete,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: onTap,
-      child: Container(
-        padding: EdgeInsets.all(15),
-        margin: EdgeInsets.symmetric(vertical: 8),
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: BorderRadius.circular(15),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.black12, blurRadius: 8, offset: Offset(0, 5))
-          ],
-        ),
-        child: Row(
-          children: [
-            CircleAvatar(
-              radius: 25,
-              backgroundColor: getPriorityColor(caseItem.priority),
-              child: Icon(getStatusIcon(caseItem.status), color: Colors.white),
-            ),
-            SizedBox(width: 15),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(caseItem.title,
-                      style:
-                          TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
-                  Text('Officer: ${caseItem.officer}',
-                      style: TextStyle(color: Colors.grey[600])),
-                  Text('Date: ${caseItem.date.toLocal()}'.split(' ')[0],
-                      style: TextStyle(color: Colors.grey[600])),
-                ],
-              ),
-            ),
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-              decoration: BoxDecoration(
-                color: getPriorityColor(caseItem.priority).withOpacity(0.2),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Text(caseItem.priority,
-                  style: TextStyle(
-                      color: getPriorityColor(caseItem.priority),
-                      fontWeight: FontWeight.bold)),
-            ),
-          ],
+    return Card(
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+      child: ListTile(
+        leading: const Icon(Icons.folder_open, size: 40, color: Colors.deepPurple),
+        title: Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
+        subtitle: Text(description),
+        trailing: SizedBox(
+          width: 110,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconButton(icon: const Icon(Icons.remove_red_eye, color: Colors.blue), onPressed: onView),
+              IconButton(icon: const Icon(Icons.edit, color: Colors.orange), onPressed: onEdit),
+              IconButton(icon: const Icon(Icons.delete, color: Colors.red), onPressed: onDelete),
+            ],
+          ),
         ),
       ),
     );

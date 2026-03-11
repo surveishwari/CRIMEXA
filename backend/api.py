@@ -1,49 +1,55 @@
 from flask import Flask, request, jsonify
-import os
-
-from evidence_detector import detect_evidence
+from ultralytics import YOLO
+from PIL import Image
+import io
 
 app = Flask(__name__)
 
-UPLOAD_FOLDER = "uploads"
-os.makedirs(UPLOAD_FOLDER, exist_ok=True)
-
+model = YOLO("yolov8n.pt")
 
 @app.route("/")
 def home():
-    return "CRIMEXA AI SERVER RUNNING"
+    return "CRIMEXA AI Backend Running"
 
 
 @app.route("/analyze_scene", methods=["POST"])
 def analyze_scene():
 
-    if 'image' not in request.files:
-        return jsonify({"error": "No image uploaded"}), 400
+    file = request.files["image"]
 
-    image = request.files['image']
+    image_bytes = file.read()
+    image = Image.open(io.BytesIO(image_bytes))
 
-    filepath = os.path.join(UPLOAD_FOLDER, image.filename)
+    results = model(image)
 
-    image.save(filepath)
+    detected_objects = []
 
-    objects = detect_evidence(filepath)
+    for r in results:
+        for box in r.boxes:
+            cls = int(box.cls)
+            name = model.names[cls]
+            detected_objects.append(name)
 
-    # Crime prediction logic
-    prediction = "Unknown"
-
-    if "knife" in objects or "gun" in objects:
-        prediction = "Weapon Assault"
-
-    elif "person" in objects and "blood" in objects:
-        prediction = "Homicide Reconstruction"
-
-    elif "person" in objects:
-        prediction = "Robbery Case"
+    prediction = predict_crime(detected_objects)
 
     return jsonify({
         "prediction": prediction,
-        "objects_detected": objects
+        "objects_detected": detected_objects
     })
+
+
+def predict_crime(objects):
+
+    if "knife" in objects or "gun" in objects:
+        return "Weapon Assault"
+
+    if "person" in objects and "tv" in objects:
+        return "Burglary Case"
+
+    if "person" in objects and "handbag" in objects:
+        return "Robbery Reconstruction"
+
+    return "Unknown Crime"
 
 
 if __name__ == "__main__":

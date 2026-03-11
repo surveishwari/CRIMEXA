@@ -1,81 +1,44 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import '../services/api_service.dart';
 
 class CrimeMapScreen extends StatefulWidget {
-const CrimeMapScreen({super.key});
-
-@override
-State<CrimeMapScreen> createState() => _CrimeMapScreenState();
+  @override
+  _CrimeMapScreenState createState() => _CrimeMapScreenState();
 }
 
 class _CrimeMapScreenState extends State<CrimeMapScreen> {
+  Set<Marker> markers = {};
 
-late GoogleMapController mapController;
+  @override
+  void initState() {
+    super.initState();
+    fetchHeatmap();
+  }
 
-final LatLng center = const LatLng(18.5204, 73.8567); // Pune
+  void fetchHeatmap() async {
+    var data = await ApiService.getHeatmap();
+    Set<Marker> tempMarkers = {};
+    for (var loc in data) {
+      tempMarkers.add(Marker(
+        markerId: MarkerId("${loc['lat']}_${loc['lng']}"),
+        position: LatLng(loc['lat'], loc['lng']),
+        infoWindow: InfoWindow(title: "Crime Intensity: ${loc['intensity']}"),
+      ));
+    }
+    setState(() {
+      markers = tempMarkers;
+    });
+  }
 
-final List<Marker> crimeMarkers = [
-
-```
-Marker(
-  markerId: const MarkerId("crime1"),
-  position: const LatLng(18.5204, 73.8567),
-  infoWindow: const InfoWindow(
-    title: "Robbery",
-    snippet: "Street Area",
-  ),
-),
-
-Marker(
-  markerId: const MarkerId("crime2"),
-  position: const LatLng(18.5300, 73.8600),
-  infoWindow: const InfoWindow(
-    title: "Vehicle Theft",
-    snippet: "Parking Area",
-  ),
-),
-
-Marker(
-  markerId: const MarkerId("crime3"),
-  position: const LatLng(18.5100, 73.8500),
-  infoWindow: const InfoWindow(
-    title: "Assault",
-    snippet: "Restaurant",
-  ),
-),
-```
-
-];
-
-void _onMapCreated(GoogleMapController controller) {
-mapController = controller;
-}
-
-@override
-Widget build(BuildContext context) {
-
-```
-return Scaffold(
-
-  appBar: AppBar(
-    title: const Text("Crime Heatmap"),
-  ),
-
-  body: GoogleMap(
-
-    onMapCreated: _onMapCreated,
-
-    initialCameraPosition: CameraPosition(
-      target: center,
-      zoom: 12,
-    ),
-
-    markers: Set.from(crimeMarkers),
-
-  ),
-
-);
-```
-
-}
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text("Crime Heatmap")),
+      body: GoogleMap(
+        initialCameraPosition: CameraPosition(target: LatLng(18.5204, 73.8567), zoom: 13),
+        markers: markers,
+      ),
+    );
+  }
 }

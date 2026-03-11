@@ -3,197 +3,275 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 import '../services/ai_service.dart';
+import '../services/report_service.dart';
+
 import '../ai/reconstruction_engine.dart';
+import '../ai/timeline_engine.dart';
+
 import '../screens/crime_scene_viewer.dart';
+import '../screens/timeline_screen.dart';
 
 class CrimeScannerScreen extends StatefulWidget {
-const CrimeScannerScreen({super.key});
+  const CrimeScannerScreen({super.key});
 
-@override
-State<CrimeScannerScreen> createState() => _CrimeScannerScreenState();
+  @override
+ State<CrimeScannerScreen> createState() => _CrimeScannerScreenState();
 }
 
 class _CrimeScannerScreenState extends State<CrimeScannerScreen> {
 
-File? image;
+  File? image;
 
-String prediction = "";
-String reconstruction = "";
-List objects = [];
+  String prediction = "";
+  String reconstruction = "";
 
-final AIService ai = AIService();
-final ReconstructionEngine engine = ReconstructionEngine();
+  List<String> objects = [];
+  List<String> timeline = [];
 
-Future scanScene() async {
+  bool isLoading = false;
 
-```
-final picked = await ImagePicker().pickImage(
-  source: ImageSource.camera,
-);
+  final AIService ai = AIService();
+  final ReconstructionEngine engine = ReconstructionEngine();
+  final TimelineEngine timelineEngine = TimelineEngine();
+  final ReportService reportService = ReportService();
 
-if (picked == null) return;
+  /// SCAN CRIME SCENE
+  Future scanScene() async {
 
-setState(() {
-  image = File(picked.path);
-  prediction = "";
-  reconstruction = "";
-  objects = [];
-});
+    final picked = await ImagePicker().pickImage(
+      source: ImageSource.camera,
+    );
 
-try {
+    if (picked == null) return;
 
-  var result = await ai.analyzeScene(image!);
+    setState(() {
+      image = File(picked.path);
+      prediction = "";
+      reconstruction = "";
+      objects = [];
+      timeline = [];
+      isLoading = true;
+    });
 
-  String pred = result["prediction"];
-  List detectedObjects = result["objects_detected"];
+    try {
 
-  String recon = engine.reconstruct(pred);
+      /// AI ANALYSIS
+      var result = await ai.analyzeScene(image!);
 
-  setState(() {
-    prediction = pred;
-    objects = detectedObjects;
-    reconstruction = recon;
-  });
+      String pred = result["prediction"];
 
-} catch (e) {
+      List<String> detectedObjects =
+          List<String>.from(result["objects_detected"]);
 
-  setState(() {
-    prediction = "AI Server Error";
-  });
+      /// RECONSTRUCTION
+      String recon = engine.reconstruct(pred);
 
-}
-```
+      /// TIMELINE
+      List<String> generatedTimeline =
+          timelineEngine.generateTimeline(pred);
 
-}
+      setState(() {
+        prediction = pred;
+        objects = detectedObjects;
+        reconstruction = recon;
+        timeline = generatedTimeline;
+        isLoading = false;
+      });
 
-@override
-Widget build(BuildContext context) {
+    } catch (e) {
 
-```
-return Scaffold(
+      setState(() {
+        prediction = "AI Server Error";
+        isLoading = false;
+      });
 
-  appBar: AppBar(
-    title: const Text("Crime Scene Scanner"),
-  ),
+    }
+  }
 
-  body: SingleChildScrollView(
+  /// GENERATE REPORT
+  Future generateReport() async {
 
-    padding: const EdgeInsets.all(16),
+    if (prediction.isEmpty) return;
 
-    child: Column(
+    await reportService.generateReport(
+      prediction: prediction,
+      objects: objects,
+      reconstruction: reconstruction,
+      timeline: timeline,
+    );
+  }
 
-      crossAxisAlignment: CrossAxisAlignment.start,
+  @override
+  Widget build(BuildContext context) {
 
-      children: [
+    return Scaffold(
 
-        /// IMAGE PREVIEW
-        image != null
-            ? ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.file(
-                  image!,
-                  height: 250,
-                  width: double.infinity,
-                  fit: BoxFit.cover,
-                ),
-              )
-            : const Text("No crime scene scanned"),
+      appBar: AppBar(
+        title: const Text("Crime Scene Scanner"),
+      ),
 
-        const SizedBox(height: 20),
+      body: SingleChildScrollView(
 
-        /// SCAN BUTTON
-        ElevatedButton.icon(
-          icon: const Icon(Icons.camera_alt),
-          label: const Text("Scan Crime Scene"),
-          onPressed: scanScene,
-        ),
+        padding: const EdgeInsets.all(16),
 
-        const SizedBox(height: 30),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
 
-        if (prediction.isNotEmpty) ...[
-
-          const Text(
-            "AI Prediction",
-            style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold),
-          ),
-
-          const SizedBox(height: 8),
-
-          Text(
-            prediction,
-            style: const TextStyle(
-              fontSize: 22,
-              color: Colors.red,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-
-          const SizedBox(height: 20),
-
-          const Text(
-            "Objects Detected",
-            style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold),
-          ),
-
-          const SizedBox(height: 8),
-
-          Text(
-            objects.join(", "),
-            style: const TextStyle(fontSize: 16),
-          ),
-
-          const SizedBox(height: 20),
-
-          const Text(
-            "Scene Reconstruction",
-            style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold),
-          ),
-
-          const SizedBox(height: 8),
-
-          Text(
-            reconstruction,
-            style: const TextStyle(fontSize: 16),
-          ),
-
-          const SizedBox(height: 30),
-
-          /// 3D VIEW BUTTON
-          Center(
-            child: ElevatedButton(
-              child: const Text("View 3D Crime Scene"),
-              onPressed: () {
-
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => CrimeSceneViewer(
-                      prediction: prediction,
-                      objects: objects,
+            /// IMAGE PREVIEW
+            image != null
+                ? ClipRRect(
+                    borderRadius: BorderRadius.circular(12),
+                    child: Image.file(
+                      image!,
+                      height: 250,
+                      width: double.infinity,
+                      fit: BoxFit.cover,
                     ),
-                  ),
-                );
+                  )
+                : const Text("No crime scene scanned"),
 
-              },
+            const SizedBox(height: 20),
+
+            /// SCAN BUTTON
+            ElevatedButton.icon(
+              icon: const Icon(Icons.camera_alt),
+              label: const Text("Scan Crime Scene"),
+              onPressed: scanScene,
             ),
-          ),
 
-        ]
+            const SizedBox(height: 20),
 
-      ],
+            /// LOADING
+            if (isLoading)
+              const Center(
+                child: CircularProgressIndicator(),
+              ),
 
-    ),
+            const SizedBox(height: 20),
 
-  ),
+            /// SHOW RESULTS AFTER SCAN
+            if (prediction.isNotEmpty) ...[
 
-);
-```
+              /// AI PREDICTION
+              const Text(
+                "AI Prediction",
+                style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
 
-}
+              const SizedBox(height: 8),
+
+              Text(
+                prediction,
+                style: const TextStyle(
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.red,
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              /// OBJECTS DETECTED
+              const Text(
+                "Objects Detected",
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+
+              const SizedBox(height: 8),
+
+              Text(
+                objects.join(", "),
+                style: const TextStyle(fontSize: 16),
+              ),
+
+              const SizedBox(height: 10),
+
+              /// DETECTED EVIDENCE
+              Text(
+                "Detected Evidence: ${objects.join(", ")}",
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              /// RECONSTRUCTION
+              const Text(
+                "Scene Reconstruction",
+                style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
+
+              const SizedBox(height: 8),
+
+              Text(
+                reconstruction,
+                style: const TextStyle(fontSize: 16),
+              ),
+
+              const SizedBox(height: 20),
+
+              /// TIMELINE BUTTON
+              ElevatedButton.icon(
+                icon: const Icon(Icons.timeline),
+                label: const Text("View Crime Timeline"),
+                onPressed: () {
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TimelineScreen(
+                        timeline: timeline,
+                      ),
+                    ),
+                  );
+
+                },
+              ),
+
+              const SizedBox(height: 10),
+
+              /// REPORT BUTTON
+              ElevatedButton.icon(
+                icon: const Icon(Icons.picture_as_pdf),
+                label: const Text("Generate Case Report"),
+                onPressed: generateReport,
+              ),
+
+              const SizedBox(height: 10),
+
+              /// 3D SCENE VIEW
+              ElevatedButton.icon(
+                icon: const Icon(Icons.view_in_ar),
+                label: const Text("View 3D Crime Scene"),
+                onPressed: () {
+
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => CrimeSceneViewer(
+                        prediction: prediction,
+                        objects: objects,
+                      ),
+                    ),
+                  );
+
+                },
+              ),
+
+            ],
+
+          ],
+        ),
+      ),
+    );
+  }
 }
