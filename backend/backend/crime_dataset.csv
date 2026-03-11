@@ -1,0 +1,7 @@
+location_type,time_of_incident,entry_method,weapon_present,crime_type
+1,1,0,1,Robbery
+0,2,1,0,Fraud
+1,0,0,1,Assault
+0,1,1,0,Theft
+1,2,0,1,Robbery
+0,0,1,0,Fraud

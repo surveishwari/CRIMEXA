@@ -1,64 +1,50 @@
 from flask import Flask, request, jsonify
-from flask_cors import CORS
-import pandas as pd
-import joblib
-import numpy as np
 import os
-from risk_engine import calculate_final_risk
+
+from evidence_detector import detect_evidence
 
 app = Flask(__name__)
-CORS(app)
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, "..", "models", "crime_model.pkl")
-model = joblib.load(MODEL_PATH)
+UPLOAD_FOLDER = "uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
-# Load location & crime classes for decoding
-CLASSES_PATH = os.path.join(BASE_DIR, "..", "models", "crime_classes.pkl")
-crime_classes = joblib.load(CLASSES_PATH)
 
-@app.route("/predict", methods=["POST"])
-def predict():
-    try:
-        data = request.get_json()
-        location = int(data["location"])
-        hour = int(data["hour"])
-        month = int(data["month"])
-        arrest = int(data["arrest"])
-        domestic = int(data["domestic"])
-        state = data["state"]
+@app.route("/")
+def home():
+    return "CRIMEXA AI SERVER RUNNING"
 
-        features = pd.DataFrame({
-            "location":[location],
-            "hour":[hour],
-            "month":[month],
-            "arrest":[arrest],
-            "domestic":[domestic]
-        })
 
-        pred_idx = model.predict(features)[0]
-        prediction = crime_classes.inverse_transform([pred_idx])[0]
+@app.route("/analyze_scene", methods=["POST"])
+def analyze_scene():
 
-        probs = model.predict_proba(features)[0]
-        confidence = float(np.max(probs)*100)
+    if 'image' not in request.files:
+        return jsonify({"error": "No image uploaded"}), 400
 
-        final_risk = calculate_final_risk(confidence, state)
+    image = request.files['image']
 
-        # Threat level
-        if final_risk < 40: threat="LOW"
-        elif final_risk<70: threat="MEDIUM"
-        else: threat="HIGH"
+    filepath = os.path.join(UPLOAD_FOLDER, image.filename)
 
-        return jsonify({
-            "status":"success",
-            "prediction": prediction,
-            "confidence": round(confidence,2),
-            "final_risk": round(final_risk,2),
-            "threat_level": threat
-        })
+    image.save(filepath)
 
-    except Exception as e:
-        return jsonify({"status":"error","message":str(e)})
+    objects = detect_evidence(filepath)
 
-if __name__=="__main__":
+    # Crime prediction logic
+    prediction = "Unknown"
+
+    if "knife" in objects or "gun" in objects:
+        prediction = "Weapon Assault"
+
+    elif "person" in objects and "blood" in objects:
+        prediction = "Homicide Reconstruction"
+
+    elif "person" in objects:
+        prediction = "Robbery Case"
+
+    return jsonify({
+        "prediction": prediction,
+        "objects_detected": objects
+    })
+
+
+if __name__ == "__main__":
     app.run(debug=True)

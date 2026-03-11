@@ -1,0 +1,961 @@
+District,Murder,Robbery,Theft,Total_IPC_Crime
+2,3,11,16,144
+Alluri Sitharama Raju,29,0,0,1009
+Anakapalli,24,0,0,5747
+Anantapuramu,44,0,0,5915
+Annamayya,45,0,0,3738
+Bapatla,74,0,0,6138
+Chittoor,47,0,0,6025
+Dr BR Ambedkar Konaseema,24,0,0,5101
+East Godavari,24,0,0,5921
+Eluru,37,0,0,7702
+Guntakal Railway,2,0,0,592
+Guntur,50,0,1,8059
+Kakinada,23,0,0,4363
+Krishna,33,0,0,6229
+Kurnool,38,0,0,7860
+Nandyal,33,0,0,4161
+NTR,35,0,0,11157
+Palnadu,44,0,1,4554
+Parvathipuram Manyam,5,0,0,2734
+Prakasam,48,0,3,7609
+Sri Potti Sriramulu Nellore,53,0,1,6007
+Sri Sathya Sai,30,0,2,5684
+Srikakulam,26,0,0,8620
+Tirupati,38,0,0,6126
+Viiayawada Railway,2,0,0,1213
+Visakhapatnam,24,0,0,5186
+Vizianagaram,21,0,0,6489
+West Godavari,17,0,0,2325
+YSR,52,0,0,7603
+Anjaw,0,0,0,31
+Changlang,1,0,0,84
+Crime Branch,0,0,0,3
+Dibang Valley,1,0,0,7
+Kameng East,1,0,0,130
+Kameng West,4,0,0,89
+Kurung Kumey,1,0,0,28
+Lohit,1,0,0,82
+Longding,0,0,0,54
+Lower Dibang Valley,2,0,0,68
+Papum Pare City,6,0,0,918
+Papum Pare Rural,2,0,0,134
+Siang East,6,0,0,227
+Siang Upper,1,0,0,44
+Siang West,2,0,0,97
+Subansiri Lower,3,0,0,50
+Subansiri Upper,1,0,0,81
+Tawang,2,0,0,28
+Tirap,4,0,0,29
+Namsai,10,0,0,118
+Siang,1,0,0,35
+Kamle,3,0,0,22
+Kra Dadi,0,0,0,24
+Lower Siang,1,0,0,42
+Leparada,1,0,0,44
+Shiyomi,1,0,0,20
+Pakkessang,2,0,0,16
+BIEO,0,0,0,18
+Barpeta,32,0,0,1338
+Baksa,12,0,0,394
+Bongaigaon,19,0,0,1263
+CID,0,0,0,12
+Cachar,44,0,0,4480
+Chirang,13,0,0,384
+Darrang,31,0,0,1441
+Dhemaji,20,0,0,541
+Dhubri,30,0,1,1563
+Dibrugarh,54,0,0,1661
+GRP,12,0,0,654
+Goalpara,26,0,0,1236
+Golaghat,37,0,0,870
+Guwahati City,67,0,0,8263
+Hailakandi,13,0,0,1183
+Hamren,2,0,0,167
+Jorhat,34,0,0,1048
+Kamrup,57,0,0,4308
+Karbi Anglong,19,0,0,448
+Karimganj,35,0,1,2190
+Kokrajhar,29,0,0,869
+Lakhimpur,32,0,0,1154
+Morigaon,25,0,0,1591
+Dima Hasao,12,0,0,161
+Nagaon,49,0,0,2836
+Nalbari,20,0,0,1409
+RPO,0,0,0,0
+SOU,0,0,0,0
+STF,0,0,0,7
+Sibsagar,21,0,0,373
+Sonitpur,47,0,0,1649
+Tinsukia,60,0,0,1676
+Udalguri,25,0,0,758
+Sadia,4,0,0,158
+Majuli,2,0,0,193
+Biswanath,48,0,0,690
+Hojai,31,0,0,1291
+South Salmara,19,0,0,619
+Charaideo,25,0,0,348
+Bajali,11,0,0,378
+Tamulpur,8,0,0,262
+Araria,74,0,0,5149
+Arwal,18,0,207,1577
+Aurangabad,67,0,0,4705
+Bagaha,41,0,0,2065
+Banka,52,0,0,3922
+Begusarai,87,0,0,5181
+Bettiah,61,0,0,6013
+Kaimur(Bhabhua),38,0,0,3162
+Bhagalpur,62,0,0,6233
+Bhojpur,98,0,0,5950
+Buxar,47,0,35,3583
+Darbhanga,60,0,0,5599
+Gaya,102,0,104,11626
+Gopalganj,39,0,1,5287
+Jamalpur Railway,4,0,0,622
+Jamui,46,0,0,3270
+Jehanabad,27,0,15,2764
+Katihar,63,0,0,4200
+Katihar Railway,5,0,0,519
+Khagaria,57,0,0,4327
+Kishanganj,28,0,0,1749
+Lakhisarai,31,0,0,2296
+Madhepura,86,0,0,4253
+Madhubani,82,0,0,5442
+Motihari,155,0,0,10991
+Munger,43,0,114,3114
+Muzaffarpur,134,0,0,11323
+Muzaffarpur Railway,6,0,0,938
+Nalanda,99,0,3,8382
+Naugachia,28,0,0,1755
+Nawadah,54,0,0,5647
+Patna,290,0,0,28475
+Patna Railway,9,0,0,2148
+Purnea,75,0,0,6199
+Rohtas,105,0,0,6527
+Saharsa,46,0,0,3162
+Samastipur,85,0,0,6828
+Saran,114,0,0,11912
+Sheikhpura,26,0,3,1417
+Sheohar,9,0,2,928
+Sitamarhi,70,0,8,5619
+Siwan,65,0,0,6277
+Supaul,60,0,0,3677
+Vaishali,114,0,3,6799
+Economic Offences Unit,0,0,0,15
+Anti Terrorist Squad,0,0,0,0
+Balod,13,0,0,1488
+Balodbazar,18,5,1,3179
+Balrampur,49,0,0,1338
+Bemetra,11,0,0,1348
+Bilaspur,32,0,0,7265
+Bizapur,34,0,0,379
+Dantewara,25,0,0,444
+Dhamtari,27,0,0,1852
+Durg,47,0,0,6485
+Gariyaband,21,0,0,1603
+GRP Raipur,0,0,0,479
+Jagdalpur,25,0,0,1364
+Janjgir,30,0,1,3235
+Jashpur,71,0,0,1290
+Kabirdham,21,0,0,1661
+Kanker,40,0,0,1182
+Kondagaon,9,0,0,722
+Korba,36,0,0,3101
+Koriya,22,0,0,835
+Mahasamund,18,0,0,1534
+Mungali,9,0,0,991
+Narayanpur,22,0,0,245
+Raigarh,65,0,0,3368
+Raipur,63,0,0,9892
+Rajnandgaon,21,0,0,2023
+Sarguja,58,0,0,2349
+Sukma,21,0,0,294
+Surajpur,59,0,0,1830
+Gaurela-Pendra-Marwari,12,0,0,913
+Khairagarh - Chhuikhadan-Gandai,10,0,0,933
+Manendragarh-Chirmiri-Bharatpur,17,0,0,1591
+Mohla-Manpur-Ambagarh Chouki,7,0,0,332
+Sakti,20,0,0,1077
+Sarangarh-Bilaigarh,25,0,0,1339
+North Goa,16,0,1,1228
+South Goa,10,0,0,800
+CID,0,0,0,66
+Ahmedabad City,109,0,6,29238
+Ahmedabad Rural,30,0,0,4569
+Amreli,19,0,1,2365
+Anand,22,0,30,3888
+Arvalli,5,0,0,2455
+Banaskantha,40,0,1,5136
+Bharuch,28,0,3,5180
+Bhavnagar,34,0,0,3178
+Botad,16,0,0,1391
+Chhotaudepur,14,0,0,3319
+CID Crime,0,0,0,51
+Dahod,20,0,0,3709
+Dang,4,0,0,335
+Devbhumi Dwarka,3,0,6,1633
+Gandhinagar,22,0,1,4074
+Gir Somnath,11,0,0,1699
+Jamnagar,24,0,1,4747
+Junagadh,22,0,5,2819
+Kachchh East(G),23,0,1,2564
+Kachchh West(B),21,0,0,3358
+Kheda,27,0,1,3894
+Mahisagar,11,0,0,1351
+Mehsana,25,0,1,3266
+Morbi,30,0,2,4287
+Narmada,7,0,0,2930
+Navsari,17,0,0,4726
+Panchmahal,29,0,0,3840
+Patan,15,0,0,3751
+Porbandar,14,0,1,983
+Rajkot City,37,0,12,5368
+Rajkot Rural,32,0,1,2809
+Sabarkantha,23,0,1,3757
+Surat City,89,0,3,11453
+Surat Rural,32,0,2,6114
+Surendranagar,28,0,3,3722
+Tapi,13,0,2,3400
+Vadodara City,18,0,1,4320
+Vadodara Rural,25,0,0,5522
+Valsad,25,0,0,6847
+W Rly Ahmedabad,2,0,0,1271
+W Rly Vadodara,2,0,0,1228
+Cyber Ahmedabad Range,0,0,0,26
+Cyber Bhavnagar Range,0,0,0,7
+Cyber Border Range,0,0,0,9
+Cyber Gandhinagar Range,0,0,0,12
+Cyber Junagadh Range,0,0,0,41
+Cyber Panchmahal Range,0,0,0,1
+Cyber Rajkot Range,0,0,0,2
+Cyber Surat Range,0,0,0,10
+Cyber Vadodara Range,0,0,0,2
+Ambala,26,0,6,4892
+Bhiwani,42,0,0,4019
+Faridabad,96,0,1,10294
+Fatehabad,24,0,1,3440
+GRP,16,0,0,1387
+Gurugram,82,1,1,15863
+Hissar,54,1,3,8092
+Jhajjar,61,0,3,3695
+Jind,48,0,0,4175
+Kaithal,34,0,0,3367
+Karnal,61,0,74,9805
+Kurukshetra,26,0,3,4678
+Mahendergarh,28,0,0,3389
+Nuh,30,0,0,3011
+Palwal,52,0,1,4299
+Panchkula,8,0,2,3032
+Panipat,63,0,17,8003
+Rewari,32,0,3,3910
+Rohtak,59,1,40,6358
+Sirsa,36,0,1,5426
+Sonipat,93,0,32,7040
+Yamunanagar,37,0,7,5850
+Irrigation & Power,0,0,0,1686
+Charkhi Dadri,15,2,0,1539
+Hansi,19,0,0,2044
+Baddi,7,0,0,753
+Bilaspur,7,0,0,1077
+Chamba,8,0,0,597
+CID,0,0,0,16
+GRP,1,0,0,19
+Hamirpur,3,0,0,873
+Kangra,9,0,0,1901
+Kinnaur,2,0,0,268
+Kullu,7,0,0,811
+Lahaul & Spiti,1,0,0,80
+Mandi,11,0,0,1907
+Shimla,14,0,1,1655
+Sirmaur,8,0,0,1027
+Solan,5,0,0,906
+Una,6,0,0,881
+Cyber,0,0,0,19
+Nurpur,4,0,0,715
+Bokaro,54,0,0,3501
+Chaibasa,85,0,0,799
+Chatra,60,0,0,1623
+Deoghar,76,0,0,2835
+Dhanbad,80,0,0,5404
+Dhanbad Railway,1,0,0,489
+Dumka,53,0,0,1159
+Garhwa,78,0,0,1924
+Giridih,93,0,0,3409
+Godda,56,0,0,1581
+Gumla,86,0,0,904
+Hazaribagh,68,0,0,4353
+Jamshedpur,72,0,0,3220
+Jamshedpur Railway,0,0,0,206
+Jamtara,18,0,0,614
+Khunti,54,0,0,530
+Koderma,34,0,0,964
+Latehar,51,0,0,856
+Lohardagga,26,0,0,711
+Pakur,23,0,0,724
+Palamu,98,0,1,2803
+Ramgarh,37,0,0,839
+Ranchi,133,0,0,7660
+Sahebganj,55,0,0,1462
+Saraikela,35,0,0,1103
+Simdega,37,0,0,514
+Bagalkot,35,0,0,2317
+Bengaluru City,206,19,11,41637
+Bengaluru District,64,0,0,7568
+Belagavi District,72,0,4,4955
+Ballari,18,0,0,2053
+Bidar,41,1,11,3110
+Vijayapura,59,0,2,3103
+Chikkaballapura,24,0,0,2734
+Chamarajnagar,20,0,0,1951
+Chikkamagaluru,32,0,0,3036
+Chitradurga,32,0,0,4367
+Dakshina Kannada,11,0,0,1835
+Davanagere,20,0,6,3755
+Dharwad,19,0,0,1237
+Gadag,16,0,0,1229
+Kalaburgi,57,0,0,2555
+Hassan,38,0,5,5163
+Haveri,12,0,0,2519
+Hubballi Dharwad City,25,0,0,1776
+KGF,12,0,0,836
+Kodagu,28,0,0,1576
+Kolar,43,0,0,2552
+Koppal,26,0,0,1819
+Mandya,45,0,1,4932
+Mangaluru City,19,0,1,2122
+Mysuru City,30,0,0,2553
+Mysuru District,30,1,0,4542
+Raichur,45,0,0,2642
+KRailways,8,0,0,928
+Ramanagara,37,0,0,4163
+Shimoga,38,1,0,4654
+Tumakuru,53,0,0,6440
+Udupi,12,0,0,2444
+Uttara Kannada,14,0,0,2460
+Yadgiri,15,0,2,1442
+Belagavi City,19,0,0,1694
+Kalaburgi City,28,0,1,2112
+Vijayanagara,19,0,0,1837
+Alapuzha,23,0,265,11945
+Ernakulam Commr,12,0,186,24729
+Ernakulam Rural,35,0,184,12100
+Idukki,20,0,75,14967
+Kannur City,7,0,85,4085
+Kasargod,12,0,63,3290
+Kollam Commr,18,0,231,11191
+Kollam Rural,19,0,198,8672
+Kottayam,27,0,163,30534
+Kozhikode Commr,6,0,110,10605
+Kozhikode Rural,8,0,99,6994
+Malappuram,24,0,154,18964
+Palakkad,21,0,65,15609
+Pathanamthitta,18,0,96,8811
+Railways,4,0,3,362
+Thrissur Commr,21,0,143,10136
+Thrissur Rural,16,0,131,10110
+Trivandrum Commr,9,0,187,19606
+Trivandrum Rural,30,0,298,27733
+Wayanadu,15,0,19,3880
+Crime Branch,0,0,0,4
+Kannur Rural,7,0,37,4211
+Agar,10,0,0,2062
+Alirajpur,46,0,0,2047
+Anuppur,22,0,0,1986
+Ashok Nagar,24,0,0,3000
+Balaghat,38,0,0,3523
+Barwani,31,0,0,3404
+Betul,44,0,0,4327
+Bhind,35,0,32,4234
+Bhopal Commissionarate,37,0,16,15507
+Bhopal Railway,0,0,0,5395
+Burhanpur,21,0,0,2535
+Chhatarpur,46,0,4,5758
+Chhindwara,46,0,0,5315
+Damoh,24,0,0,4196
+Datia,19,0,0,2848
+Dewas,25,0,1,7247
+Dhar,60,0,5,8222
+Dindori,30,0,0,2361
+Guna,33,0,0,5822
+Gwalior,80,3,12,13140
+Harda,18,0,0,2366
+Narmadapuram,44,0,1,4805
+Indore Commissionarate,51,2,42,18126
+Indore Railway,0,0,0,1937
+Jabalpur,76,0,1,13246
+Jabalpur Railway,4,0,0,3915
+Jhabua,23,0,0,4209
+Katni,35,0,0,4838
+Khandwa,24,0,0,4478
+Khargone,35,0,0,4126
+Mandla,33,0,0,2704
+Mandsaur,15,0,1,4239
+Morena,43,0,18,6907
+Narsinghpur,32,0,1,3536
+Neemuch,13,0,0,2589
+Panna,19,0,2,3324
+Raisen,54,0,4,5322
+Rajgarh,23,0,0,5721
+Ratlam,33,0,0,7420
+Rewa,53,0,0,9115
+Sagar,59,0,1,12336
+Satna,48,0,1,7007
+Seoni,33,0,0,3700
+Shahdol,49,0,0,3939
+Shajapur,11,0,1,3298
+Sheopur,11,0,2,1888
+Shivpuri,47,0,9,6469
+Sidhi,22,0,0,3879
+Sehore,25,0,0,5121
+Singrauli,51,7,1,4582
+Tikamgarh,18,0,1,3282
+Ujjain,39,0,0,9729
+Umaria,19,0,0,1934
+Vidisha,39,0,0,5779
+Cyber Crime Cell,0,0,0,0
+Niwari,16,0,0,1531
+Bhopal Rural,17,0,0,2218
+Indore Rural,29,0,0,5145
+Ahmednagar,105,0,0,19422
+Akola,42,0,0,5582
+Amravati Commr,27,0,1,4656
+Amravati Rural,53,1,0,8160
+Chhatrapati Sambhajinagar Commr,30,0,0,5814
+Chhatrapati Sambhajinagar Rural,41,0,2,5811
+Beed,64,0,0,7062
+Bhandara,25,0,0,3030
+Buldhana,37,1,0,7909
+Chandrapur,31,0,0,8527
+Dhule,36,0,0,4086
+Gadchiroli,35,0,1,2154
+Gondia,28,0,0,3294
+Hingoli,28,0,0,3874
+Jalgaon,66,0,0,8189
+Jalna,51,0,0,6767
+Kolhapur,52,0,0,9426
+Latur,43,0,2,6423
+Mumbai Commr,124,0,3,44873
+Mumbai Railway,8,0,0,15662
+Nagpur Commr,79,0,1,17297
+Nagpur Railway,2,0,0,1559
+Nagpur Rural,58,0,1,9868
+Nanded,64,0,0,7621
+Nandurbar,21,0,0,2252
+Nasik Commr,42,0,0,4768
+Nasik Rural,79,0,1,8864
+Navi Mumbai,37,0,0,6475
+Dharashiv,30,0,3,4200
+Palghar,35,0,0,3594
+Parbhani,28,0,0,4783
+Pune Commr,101,0,14,12542
+Pune Railway,2,0,0,1338
+Pune Rural,102,0,18,17644
+Raigad,26,0,0,4526
+Ratnagiri,18,0,0,1628
+Sangli,69,0,0,8078
+Satara,45,0,1,10461
+Sindhudurg,14,0,0,1604
+Solapur Commr,9,0,0,2282
+Solapur Rural,64,0,1,10087
+Thane Commr,87,0,4,13561
+Thane Rural,33,0,1,3023
+Wardha,27,0,0,7482
+Washim,25,0,0,4499
+Yavatmal,78,0,2,11894
+Pimpri Chinchwad City,69,0,29,10238
+Chhatrapati Sambhajinagar Railway,1,0,0,4565
+Mira Bhayandar Vasai Virar Commr,37,0,0,8169
+Bishnupur,24,0,0,2766
+Chandel,0,0,0,69
+Churachandpur,18,0,0,3223
+CID,1,0,0,44
+Imphal East,37,0,0,3552
+Imphal West,21,0,2,3897
+Senapati,1,0,0,19
+Tamenglong,0,0,0,14
+Thoubal,6,0,0,535
+Ukhrul,2,0,0,26
+Kakching,14,0,0,1807
+Kamjong,1,0,0,8
+Kangpokpi,18,0,0,1126
+Jiribam,1,0,0,38
+Noney,3,0,0,26
+Pherzawl,0,0,0,14
+Tengnoupal,4,0,0,2028
+Narcotic,0,0,0,0
+Garo Hills East,2,0,0,112
+Garo Hills North,1,0,0,51
+Garo Hills South,0,0,0,52
+Garo Hills South West,5,0,0,124
+Garo Hills West,10,0,0,371
+Jaintia Hills West,7,0,0,160
+Jaintia Hills East,9,0,0,110
+Khasi Hills East,14,0,0,1227
+Khasi Hills South West,1,0,0,51
+Khasi Hills West,4,0,0,74
+Ri-Bhoi,9,0,0,356
+Cyber Cell,0,0,0,0
+Khasi Hills Eastern West,0,0,0,42
+Aizawl,10,0,4,2195
+Champhai,1,0,0,124
+Kolasib,1,0,0,182
+Lawngtlai,3,0,0,68
+Lunglei,1,0,0,186
+Mamit,2,1,0,150
+Saiha,3,0,0,77
+Serchhip,2,0,0,147
+Spl Narcotic,0,0,0,0
+Hnahthial,1,0,0,51
+Khawzawl,0,0,0,38
+Saitual,0,0,0,42
+Cyber,0,0,0,0
+Crime and EOU,0,0,0,21
+Dimapur,6,0,0,551
+Kiphire,0,0,0,16
+Kohima,2,0,0,114
+Longleng,0,0,0,32
+Mokokchung,3,0,0,43
+Mon,2,0,0,82
+Peren,1,0,0,22
+Phek,1,0,0,26
+Tuensang,1,0,0,31
+Wokha,0,0,0,50
+Zunheboto,1,0,0,42
+Noklak,0,0,0,2
+Shamator,0,0,0,8
+Tseminyu,1,0,0,17
+Crime,1,0,0,4
+Cyber Security,0,0,0,10
+Narcotics,0,0,0,0
+Angul,43,0,0,9796
+Balasore,66,0,0,6933
+Baragarh,43,0,0,3864
+Berhampur,29,0,0,6423
+Bhadrak,54,0,0,6319
+Bolangir,43,0,0,5573
+Boudh,25,0,0,1098
+Cuttack,72,0,0,4924
+DCP BBSR,52,0,0,10740
+DCP CTC,26,0,0,6251
+Deogarh,13,0,0,1628
+Dhenkanal,28,0,0,5957
+Gajapati,10,0,0,1088
+Ganjam,85,0,0,16059
+Jagatsinghpur,30,0,0,5168
+Jajpur,50,0,0,7388
+Jharsuguda,22,0,0,2923
+Kalahandi,34,0,0,4106
+Kandhamal,46,0,0,2291
+Kendrapara,43,0,0,7369
+Keonjhar,71,0,0,5586
+Khurda,33,0,0,4613
+Koraput,53,0,0,3154
+Malkangiri,31,0,0,1877
+Mayurbhanj,77,0,0,7183
+Nayagarh,26,0,0,3024
+Nabarangpur,38,0,0,2235
+Nuapada,13,0,0,1906
+Puri,54,0,0,7009
+Rayagada,26,0,0,2116
+Rourkela,37,0,0,3736
+Sambalpur,40,0,0,5198
+Sonepur,10,0,0,1680
+SRP(Cuttack),4,0,0,1034
+SRP(Rourkela),3,0,0,623
+Sundargarh,32,0,0,3068
+CID CB,0,0,0,82
+Amritsar Rural,51,0,0,1823
+Barnala,17,1,3,1021
+Batala,25,0,1,1203
+Bathinda,42,0,18,2445
+CP Amritsar,19,1,0,2990
+CP Jalandhar,18,0,6,2114
+CP Ludhiana,56,0,1,4081
+Faridkot,15,0,2,1092
+Fatehgarh Sahib,20,0,0,950
+Fazilka,16,0,1,1281
+Ferozepur,27,0,2,1370
+GRP,4,0,0,321
+Gurdaspur,4,0,1,873
+Hoshiarpur,22,0,0,1972
+Jalandhar Rural,32,0,5,1650
+Kapurthala,18,0,0,1407
+Khanna,15,0,0,1155
+Ludhiana Rural,18,0,2,856
+Mansa,15,0,8,1787
+Moga,19,0,5,1304
+Muktsar,27,0,4,769
+Pathankot,7,0,0,430
+Patiala,47,0,3,3137
+Ropar,20,0,0,991
+Sangrur,30,0,13,1666
+SAS Nagar,42,0,0,3213
+SBS Nagar,14,0,1,691
+Tarn Taran,33,0,0,1597
+Bureau of Investigation,0,0,0,6
+Intelligence Wing,0,0,0,9
+NRI Wing,0,0,0,120
+Special Task Force,0,0,0,9
+Malerkotla,8,0,0,509
+Cyber Crime Wing,0,0,0,30
+Ajmer,28,0,70,5687
+Alwar,65,0,0,9638
+Banswara,42,0,0,3249
+Baran,53,0,94,3731
+Barmer,32,0,23,3088
+Bharatpur,55,0,0,7453
+Bhilwara,33,0,53,6330
+Bikaner,80,0,4,6196
+Bundi,15,0,35,3618
+Chittorgarh,33,0,9,4742
+Churu,47,0,0,3966
+Dausa,35,0,0,5991
+Dholpur,46,0,3,4785
+Dungarpur,41,0,6,2691
+GRP Ajmer,4,0,0,1562
+GRP Jodhpur,1,0,0,400
+Ganganagar,46,0,0,4428
+Hanumangarh,42,0,2,5266
+Jaipur East,46,0,5,9603
+Jaipur North,17,0,0,4076
+Jaipur Rural,27,0,4,4265
+Jaipur South,33,0,0,8029
+Jaipur West,33,0,3,8242
+Jaisalmer,10,0,11,1582
+Jalore,17,0,0,1874
+Jhalawar,32,0,74,4796
+Jhunjhunu,35,0,0,4472
+Jodhpur East,14,0,19,3219
+Jodhpur West,19,0,18,4434
+Jodhpur Rural,26,0,15,2714
+Karauli,29,0,0,4084
+Kota City,30,0,111,5667
+Kota Rural,16,0,64,2706
+Nagaur,42,0,17,3955
+Pali,44,0,11,4996
+Pratapgarh,23,0,0,2228
+Rajsamand,23,0,15,3195
+Sawai Madhopur,17,0,3,2954
+Sikar,44,0,1,6185
+Sirohi,37,0,0,2590
+Tonk,37,0,3,4496
+Udaipur,93,0,28,9760
+Jaipur Metro,0,0,0,2
+SCRB,0,0,0,0
+ATS & SOG,0,0,0,24
+SSB,0,0,0,0
+Jaipur Crime,0,0,0,19
+Bhiwadi,22,0,3,2537
+Beawar,25,0,11,4302
+Didwana-Kuchaman,20,0,12,3172
+Kekri,20,0,22,1968
+Shahpura,16,0,18,2272
+Deeg,34,0,0,4209
+Gangapur City,34,0,0,2886
+Anupgarh,20,0,0,2428
+Dudu,5,0,2,1187
+Khairtal-Tijara,19,0,3,2041
+Kotputli-Behror,37,0,4,4965
+Balotra,24,0,1,2142
+Phalodi,18,0,9,1489
+Jodhpur Crime,0,0,0,10
+Sanchore,22,0,0,1357
+Neem Ka Thana,31,0,2,3735
+Salumbar,15,0,1,1297
+Gangtok (East),7,0,0,227
+Mangan (North),0,0,0,27
+Namchi (South),2,1,0,111
+Soreng (West),2,1,0,47
+CID,0,0,0,3
+Pakyong (East),0,0,0,57
+Gyalshing (West),1,0,0,39
+Ariyalur,16,0,0,1836
+Chennai,105,0,2,15698
+Coimbatore,52,0,0,4294
+Coimbatore City,22,0,0,4697
+Cuddalore,52,0,0,8344
+Dharmapuri,23,0,0,2754
+Dindigul,62,0,0,5540
+Erode,37,0,0,4152
+Kanchipuram,36,0,0,6409
+Kanyakumari,31,0,0,4521
+Karur,18,0,0,2197
+Krishnagiri,59,0,3,5254
+Madurai,63,0,1,6180
+Madurai City,37,0,0,4187
+Nagapattinam,15,0,0,1616
+Namakkal,35,0,0,3397
+Nilgiris,10,0,0,694
+Perambalur,12,0,0,1534
+Pudukottai,29,0,0,4464
+Ramnathapuram,36,0,0,4022
+Railway Chennai,8,0,0,1318
+Railway Trichy,1,0,0,554
+Salem,46,0,0,4658
+Salem City,26,0,0,2483
+Sivagangai,42,0,2,3689
+Thanjavur,51,0,1,8259
+Theni,46,0,0,4683
+Thirunelveli,47,0,0,7259
+Thirunelveli City,17,0,0,1709
+Thiruvallur,30,0,0,3113
+Thiruvannamalai,35,0,0,5040
+Thiruvarur,18,0,0,2805
+Thoothukudi,74,0,2,5852
+Tiruppur,31,0,1,4919
+Tiruppur City,24,0,0,1897
+Trichy,45,0,0,4977
+Trichy City,19,0,0,2367
+Vellore,24,0,0,4631
+Villupuram,35,0,0,6938
+Virudhunagar,61,4,0,4781
+Cyber Cell,0,0,0,1
+Other Units,0,0,0,17
+Chengalpattu,31,0,0,4897
+Kallakurichi,23,0,0,3644
+Ranipet,22,0,0,2389
+Tiruppattur,19,0,0,1854
+Tenkasi,39,0,2,4795
+Mayiladuthurai,10,0,0,2403
+Avadi,57,0,2,4522
+Tambaram,50,0,1,5560
+Cyberabad Commissionerate,124,0,1,22398
+Hyderabad Commissionerate,94,0,0,21774
+Karimnagar Commissionerate,21,0,0,4585
+Khammam Commissionerate,29,2,0,5436
+Nizamabad Commissionerate,52,0,0,5751
+Rachakonda Commissionerate,76,0,4,23289
+Ramagundam Commissionerate,40,0,1,5625
+Siddipet Commissionerate,18,0,0,4280
+Warangal Commissionerate,48,0,0,9884
+Adilabad,19,0,0,2527
+Bhadradri Kothagudem,27,0,0,4065
+Jagityal,32,0,0,3931
+Jayashankar Bhupalpalli,10,0,0,1824
+Jogulamba Gadwal,11,0,0,1303
+Kamareddy ,37,0,0,3507
+Kumaram Bheem Asifabad,23,0,3,1046
+Mahabubabad,10,0,1,2238
+Mahabubnagar,27,0,0,3126
+Medak,37,0,0,2864
+Nagarkurnool,31,0,0,2306
+Nalgonda,30,0,0,5318
+Nirmal,8,0,0,1686
+Rajanna Siricilla,12,0,0,3221
+Sangareddy,52,0,0,3848
+Suryapet,24,0,0,4778
+Vikarabad,30,0,0,1915
+Wanaparthy,11,0,0,1235
+Railway Police Secunderabad,1,0,0,1011
+Mulug,11,0,0,826
+Narayanpet,9,0,0,1140
+Dhalai,15,0,0,305
+Gomati,8,0,0,461
+GRP,0,0,0,18
+Kowai,11,0,0,239
+North,7,0,0,424
+Sipahijala,11,0,0,484
+South,10,0,0,328
+Unakoti,5,0,0,406
+West,34,0,0,1149
+Agra,96,0,59,11725
+Aligarh,75,0,97,13777
+Prayagraj,91,0,132,11699
+Ambedkar Nagar,31,0,17,4058
+Amethi,36,0,9,2744
+Amroha,21,0,58,3954
+Auraiya,23,0,0,3690
+Azamgarh,39,0,405,9332
+Badaun,42,0,51,5639
+Baghpat,42,0,0,3281
+Bahraich,38,0,55,8485
+Ballia,25,0,48,5256
+Balrampur,15,0,2,3396
+Banda,53,0,46,4516
+Barabanki,34,0,0,7537
+Bareilly,83,0,59,9728
+Basti,25,0,25,3549
+Bijnor,53,0,180,6505
+Bulandshahar,49,0,118,7059
+Chandoli,6,0,24,2242
+Chitrakoot,24,0,0,1621
+Deoria,28,0,0,5671
+Etah,27,0,2,4760
+Etawah,29,0,0,2871
+Ayodhya,29,0,0,5499
+Fatehgarh,42,0,3,3309
+Fatehpur,25,0,27,4439
+Firozabad,68,0,0,9485
+GRP,8,0,0,5372
+Gautambudh Nagar,53,0,10,8332
+Ghaziabad,110,2,100,14589
+Ghazipur,27,0,18,4329
+Gonda,45,0,71,6602
+Gorakhpur,64,0,0,15877
+Hamirpur,33,0,28,3406
+Hapur,34,0,0,2890
+Hardoi,47,0,32,8381
+Hathras,37,0,5,3324
+Jalaun,22,0,28,3279
+Jaunpur,51,0,0,6381
+Jhansi,35,0,24,3800
+Kannauj,46,0,18,3902
+Kanpur Dehat,30,0,18,3281
+Kanpur Commissionarate,97,0,42,10652
+Kasganj,27,0,0,3142
+Kaushambi,45,0,0,3381
+Khiri,56,0,0,6417
+Kushi Nagar,49,0,141,7458
+Lalitpur,11,0,1,2109
+Lucknow Commissionarate,98,0,62,16009
+Maharajganj,27,0,17,5022
+Mahoba,17,0,11,1102
+Mainpuri,28,0,17,5126
+Mathura,77,0,0,8536
+Mau,21,0,5,2974
+Meerut,92,0,46,9158
+Mirzapur,21,0,16,2942
+Moradabad,45,0,2,4013
+Muzaffarnagar,44,0,0,5174
+Pilibhit,35,0,35,3819
+Pratapgarh,72,0,112,7894
+Raibareilly,37,0,29,6381
+Rampur,45,0,11,2369
+Saharanpur,34,0,36,4796
+Sambhal,55,0,26,4551
+Sant Kabirnagar,13,0,0,3447
+Shahjahanpur,40,0,44,4471
+Shamli,22,0,0,2334
+Shrawasti,14,0,3,1988
+Sidharthnagar,14,0,0,3089
+Sitapur,81,0,0,7681
+Sonbhadra,40,0,12,2080
+Bhadohi,18,0,10,1319
+Sultanpur,50,0,164,6310
+Unnao,48,0,33,5463
+Varanasi Commissionarate,42,0,0,8015
+Almora,4,0,0,280
+Bageshwar,5,0,0,118
+Chamoli,5,0,0,179
+Champawat,5,0,0,234
+Dehradun,32,0,6,4240
+Haridwar,56,0,0,5081
+Nainital,15,0,1,1633
+Pauri Garhwal,3,0,0,302
+Pithoragarh,9,0,0,381
+Rudra Prayag,1,0,0,95
+Tehri Garhwal,3,0,0,267
+Udhamsingh Nagar,45,0,0,3955
+Uttarkashi,0,0,0,143
+GRP,0,0,0,186
+Cyber Cell,0,0,0,0
+Alipurduar,32,0,1,2119
+Asansol-Durgapur PC,54,0,1,4568
+Bankura,37,0,28,3226
+Barrackpur PC,52,0,89,9539
+Bidhannagar PC,25,0,17,3667
+Birbhum,79,0,70,3905
+Coochbehar,78,0,1,4414
+Dakshin Dinajpur,43,0,23,2544
+Darjeeling,21,0,4,1344
+Hooghly Rural Police,37,0,14,4752
+Howrah GRP,3,0,0,369
+Howrah PC,27,0,19,5212
+Howrah Rural,33,0,20,2798
+Jalpaiguri,42,0,6,2799
+Jhargram,22,0,0,1096
+Kharagpur GRP,4,0,0,276
+Kolkata,43,0,7,10943
+Malda,71,0,2045,9801
+Murshidabad Police District,131,0,1,9065
+Paschim Medinipur,96,0,3,4667
+Purab Medinipur,76,0,3,6747
+Purulia,44,0,22,2506
+Sealdah GRP,4,0,0,416
+Siliguri GRP,5,0,0,267
+Siliguri PC,31,0,0,4709
+Baruipur Police,90,0,58,7837
+Chandannagar PC,17,0,64,1988
+Diamond Harbour Police,39,0,37,3648
+Kalimpong,5,0,0,319
+Purba Bardhaman,76,0,47,6959
+Sundarban Police,46,0,0,3678
+Barasat,42,0,317,5395
+Basirhat,41,0,384,3586
+Bangaon,21,0,482,3004
+Islampur,49,0,2,2104
+Jangipur Police District,27,0,0,2480
+Krishnagar,77,0,128,5782
+Raiganj,25,0,1,3376
+Ranaghat,41,0,0,4332
+South Andaman,7,0,17,488
+North & Middle Andaman,1,0,3,88
+Nicobar,0,0,0,11
+Chandigarh,17,0,2,3285
+D&N Haveli,15,0,0,547
+Daman,5,0,0,174
+Diu,0,0,0,40
+Central,31,0,13,18567
+Crime Branch,0,0,0,123
+East,24,0,42,21875
+EOW,0,0,0,94
+IGI Airport,0,0,0,680
+Metro,0,0,0,6262
+New Delhi,4,0,9,2784
+North,33,0,29,27193
+North-East,42,0,95,26663
+North-West,32,0,32,28431
+Outer,45,0,31,23750
+RAILWAY,3,0,1,5008
+South,36,0,95,24309
+South-East,51,0,46,25732
+South-West,30,0,18,12083
+Spl Cell,0,0,0,173
+SPUWAC,0,0,0,111
+Vigilance,0,0,0,0
+West,31,0,30,27606
+Rohini,25,0,39,18264
+Shahdara,21,0,58,15210
+Dwarka,40,0,36,23346
+Outer North,58,0,48,15993
+Anantnag,1,0,0,1303
+Awantipora,1,0,0,495
+Bandipora,0,0,0,468
+Baramulla,2,0,0,1104
+Budgam,5,0,0,1161
+Special Crime Wing Jammu,0,0,0,36
+Special Crime Wing Kashmir,0,0,0,17
+Doda,1,0,0,657
+Ganderbal,0,0,0,707
+Handwara,0,0,0,506
+Jammu,14,0,0,4409
+Kathua,9,1,0,1391
+Kishtwar,1,0,0,424
+Kulgam,2,0,0,802
+Kupwara,3,0,0,647
+Poonch,5,0,0,996
+Pulwama,3,0,0,575
+Railways Jammu,0,0,0,26
+Railways Kashmir,0,0,0,9
+Railways Katra,0,0,0,12
+Rajouri,11,0,0,1410
+Ramban,0,0,0,1162
+Reasi,7,0,0,960
+Samba,6,0,0,927
+Shopian,1,0,0,411
+Sopore,2,0,0,537
+Srinagar,6,0,0,2377
+Udhampur,4,0,0,1436
+Cyber Crime Jammu,0,0,0,0
+Cyber Crime Kashmir,0,0,0,0
+Anti Narcotic Task Force Jammu,0,0,0,0
+Anti Narcotic Task Force Kashmir,0,0,0,0
+EOW Jammu,0,0,0,102
+EOW Kashmir,0,0,0,60
+CICE Jammu,0,0,0,0
+CICE Kashmir,0,0,0,0
+Kargil,0,0,0,168
+Leh,2,0,0,291
+Lakshadweep,0,0,0,76
+Karaikal,1,0,0,474
+Puducherry,27,0,0,2874

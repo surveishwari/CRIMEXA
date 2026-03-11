@@ -2,20 +2,21 @@ import 'package:flutter/material.dart';
 import 'screens/home_screen.dart';
 
 void main() {
-  runApp(const CrimexaApp());
+  runApp(const MyApp());
 }
 
-class CrimexaApp extends StatelessWidget {
-  const CrimexaApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: "CRIMEXA",
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      title: 'CRIMEXA',
+
+      theme: ThemeData.dark(),
+
       home: const HomeScreen(),
     );
   }

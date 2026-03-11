@@ -1,75 +1,90 @@
 import 'package:flutter/material.dart';
+import 'package:fl_chart/fl_chart.dart';
 import '../services/api_service.dart';
 
 class PredictScreen extends StatefulWidget {
+  const PredictScreen({super.key});
+
   @override
-  _PredictScreenState createState() => _PredictScreenState();
+  State<PredictScreen> createState() => _PredictScreenState();
 }
 
 class _PredictScreenState extends State<PredictScreen> {
-
-  final hourController = TextEditingController();
-  final monthController = TextEditingController();
+  final TextEditingController hourController = TextEditingController();
+  final TextEditingController monthController = TextEditingController();
 
   int location = 1;
   int arrest = 0;
   int domestic = 0;
   String state = "Maharashtra";
 
-  String result = "";
+  double confidence = 0;
+  String predictedCrime = "";
+  double riskScore = 0;
+  String threatLevel = "";
 
   void predict() async {
-
     var response = await ApiService.predictCrime(
-      location,
-      int.parse(hourController.text),
-      int.parse(monthController.text),
-      arrest,
-      domestic,
-      state
-    );
+        location,
+        int.parse(hourController.text),
+        int.parse(monthController.text),
+        arrest,
+        domestic,
+        state);
 
     setState(() {
-      result =
-          "Crime: ${response['predicted_crime']}\n"
-          "Confidence: ${response['confidence']}%\n"
-          "Risk Score: ${response['risk_score']}\n"
-          "Threat Level: ${response['threat_level']}";
+      predictedCrime = response['predicted_crime'] ?? "";
+      confidence = response['confidence']?.toDouble() ?? 0;
+      riskScore = response['risk_score']?.toDouble() ?? 0;
+      threatLevel = response['threat_level'] ?? "";
     });
   }
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
-      appBar: AppBar(title: Text("CRIMEXA Prediction")),
-
+      appBar: AppBar(title: const Text("CRIMEXA Prediction")),
       body: Padding(
-        padding: EdgeInsets.all(20),
-
-        child: Column(
+        padding: const EdgeInsets.all(20),
+        child: ListView(
           children: [
-
             TextField(
               controller: hourController,
-              decoration: InputDecoration(labelText: "Hour (0-23)"),
+              decoration: const InputDecoration(labelText: "Hour (0-23)"),
+              keyboardType: TextInputType.number,
             ),
-
+            const SizedBox(height: 16),
             TextField(
               controller: monthController,
-              decoration: InputDecoration(labelText: "Month (1-12)"),
+              decoration: const InputDecoration(labelText: "Month (1-12)"),
+              keyboardType: TextInputType.number,
             ),
-
-            SizedBox(height: 20),
-
-            ElevatedButton(
-              onPressed: predict,
-              child: Text("Predict Crime"),
+            const SizedBox(height: 20),
+            ElevatedButton(onPressed: predict, child: const Text("Predict Crime")),
+            const SizedBox(height: 20),
+            Text(
+              "Predicted Crime: $predictedCrime",
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
-
-            SizedBox(height: 20),
-
-            Text(result)
+            Text("Confidence: ${confidence.toStringAsFixed(2)}%"),
+            Text("Risk Score: ${riskScore.toStringAsFixed(2)}"),
+            Text("Threat Level: $threatLevel"),
+            const SizedBox(height: 20),
+            SizedBox(
+              height: 200,
+              child: PieChart(
+                PieChartData(sections: [
+                  PieChartSectionData(
+                      value: confidence,
+                      color: Colors.red,
+                      title: "${confidence.toStringAsFixed(1)}%"),
+                  PieChartSectionData(
+                      value: 100 - confidence,
+                      color: Colors.green,
+                      title: ""),
+                ]),
+              ),
+            ),
           ],
         ),
       ),

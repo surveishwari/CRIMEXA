@@ -2,7 +2,7 @@ import pandas as pd
 import os
 
 # Load cleaned dataset
-df = pd.read_csv("datasets/final_crime_dataset_2023.csv")
+df = pd.read_csv("datasets/indian_crime_data.csv")
 
 print("Original shape:", df.shape)
 

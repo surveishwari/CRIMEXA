@@ -1,42 +1,38 @@
 name: crimexa_app
-description: CRIMEXA Crime Prediction App
+description: CRIMEXA Investigation Platform
+
 publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:
-  sdk: ">=3.3.0 <4.0.0"
+  sdk: ">=3.0.0 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
 
-  # Charts for analytics
-  fl_chart: ^1.1.1
-
-  # HTTP calls
-  http: ^1.1.0
-
-  # Google Maps & location (updated version)
-  google_maps_flutter: ^2.3.2
-  location: ^8.0.1
-
-  # PDF generation
-  pdf: ^3.11.3
-  printing: ^5.10.10
-
-  # QR Code generation
-  qr_flutter: ^4.0.0
-
-  # State management & utils
   provider: ^6.0.5
-  url_launcher: ^6.1.10
+  http: ^1.2.0
+  fl_chart: ^0.66.0
+  flutter_cube: ^0.1.1
+  arcore_flutter_plugin: ^0.1.0
+  camera: ^0.10.5
+  tflite_flutter: ^0.10.4
+  image: ^4.1.7
+  model_viewer_plus: ^1.7.0
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^2.0.0
 
 flutter:
+
   uses-material-design: true
+
   assets:
-    - assets/images/
+    - assets/3d/room.obj
+    - assets/3d/weapon.obj
+    - assets/3d/body.obj
+    - assets/3d/table.obj
